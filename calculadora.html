@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="calculator">
+
+            <div class="calculator__display" id="tela"><label>0</label></div>
+
+            <div class="calculator__keys">
+                <button class="key--operator" onclick="operacao('+')">+</button>
+                <button class="key--operator" onclick="operacao('-')">-</button>
+                <button class="key--operator" onclick="operacao('*')">&times;</button>
+                <button class="key--operator" onclick="operacao('/')">÷</button>
+                <but id="btn7" name="btn7" onclick="receberNumero(7)">7</but ton>
+                <button id="btn8" name="btn8" onclick="receberNumero(8)">8</button>
+                <button id="btn9" name="btn9" onclick="receberNumero(9)">9</button>
+                <button id="btn4" name="btn4" onclick="receberNumero(4)">4</button>
+                <button id="btn5" name="btn5" onclick="receberNumero(5)">5</button>
+                <button id="btn6" name="btn6" onclick="receberNumero(6)">6</button>
+                <button id="btn1" name="btn1" onclick="receberNumero(1)">1</button>
+                <button id="btn2" name="btn2" onclick="receberNumero(2)">2</button>
+                <button id="btn3" name="btn3" onclick="receberNumero(3)">3</button>
+                <button id="btn0" name="btn0" onclick="receberNumero(0)">0</button>
+                <button id="btnVirgula" name="btnVirgula" onclick="receberNumero(null,true)">.</button>
+                <button id="ac" name="ac" onclick="ac()">AC</button>
+                <button  class="key--equal" id="igual" name="igual" onclick="operacao('=')">=</button>
+
+                <script type="text/javascript" src="calculos.js"></script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
