@@ -4,14 +4,20 @@ let valorNatela = parseFloat(document.getElementById('tela').innerText);
 let verifica = false;
 let utimoOperador = '';
 let valorComVirgula = '';
-function verificador(valorRec) {
+function verificador() {
     valorNaMemoria = 0.0;
     div.innerHTML = '0';
     verifica = false;
 }
 function receberNumero(valor, virgula) {
+    console.log(toString(valorNatela).length)
+    if (toString(valorNatela).length <= 10) {
+        
+        return console.log('Teste')
+    }
+        
     if (virgula === true) {
-        valorComVirgula = valorNatela.toString() + '.'
+        return valorComVirgula = valorNatela.toString() + '.'
     } else {
         let msg;
         if (verifica === true) {
@@ -109,3 +115,39 @@ function ac() {
     div.innerHTML = 0;
     verifica = false;
 }
+
+const calculator = document.querySelector('.calculator')
+const keys = calculator.querySelector('.calculator__keys');
+
+keys.addEventListener('click', e => {
+    if (e.target.matches('button')) {
+        const key = e.target
+        const action = key.dataset.action
+        if (!action) {
+            // console.log('numero')
+            return receberNumero(key.innerText);
+        }
+        if (action === 'add') {
+            // console.log('operator key!')
+            return operacao('+')
+        }
+        if (action === 'subtract') {
+            return operacao('-')
+        }
+        if (action === 'multiply') {
+            return operacao('*')
+        }
+        if (action === 'divide') {
+            return operacao('/')
+        }
+        if (action === 'decimal') {
+            receberNumero(null, true)
+        }
+        if (action === 'clear') {
+            ac()
+        }
+        if (action === 'calculate') {
+            return operacao('=');
+        }
+    }
+})
