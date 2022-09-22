@@ -9,6 +9,7 @@ function verificador() {
     div.innerHTML = '0';
     verifica = false;
 }
+console.log(document.getElementById('tela').innerText.length);
 function receberNumero(valor, virgula) {
     console.log(toString(valorNatela).length)
     if (toString(valorNatela).length <= 10) {
